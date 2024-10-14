@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #FFFFFF;
+    background-attachment: fixed;
+    background-position: center;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: #F7FBFC;
+    border-radius: 10px; /* Ajusta el redondeo aquí */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+}
+
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#month-year {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #007A8C;
+    white-space: nowrap;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #009BBA;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Redondeado moderado */
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.2em; /* Tamaño de fuente aumentado */
+    white-space: nowrap;
+}
+
+
+#prev-month {
+    margin-right: 3px; /* Agrega espacio entre el botón anterior y el texto */
+}
+
+#next-month {
+    margin-left: 3px; /* Agrega espacio entre el botón siguiente y el texto */
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 14.28%;
+    height: 40px;
+    text-align: center;
+}
+
+th {
+    background-color: #007A8C;
+    color: white;
+    padding: 5px;
+}
+
+td {
+    cursor: pointer;
+    color: #333333;
+}
+
+td.active {
+    background-color: #E7F6F8;
+}
+
+td.inactive {
+    background-color: #f4f4f4;
+    color: #cccccc;
+    cursor: not-allowed;
+}
+
+td:hover.active {
+    background-color: #009BBA;
+    color: white;
+}

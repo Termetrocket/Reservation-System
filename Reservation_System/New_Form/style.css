@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #FFFFFF;
+    background-attachment: fixed;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+#header {
+    background: #007A8C;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+#header .logo {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+#header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#header ul li {
+    list-style: none;
+}
+
+#header ul li a {
+    text-decoration: none;
+    padding: 6px 10px;
+    color: #FFFFFF;
+    border-radius: 20px;
+}
+
+#header ul li a:hover, 
+#header ul li a.active {
+    background: #009BBA;
+    color: #FFFFFF;
+}
+
+/* Botón del menú */
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    z-index: 10001;
+}
+
+.menu-btn span {
+    background: #FFFFFF;
+    border-radius: 2px;
+    height: 3px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Animación del botón */
+.menu-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menú desplegable */
+#header nav {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #007A8C;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 999;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+}
+
+#header nav.active {
+    max-height: 300px;
+    opacity: 1;
+    padding: 20px 20px;
+}
+
+/* Ajustes para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    #header {
+        padding: 10px 10px;
+    }
+    #header .logo {
+        font-size: 1.2em;
+    }
+    #header ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #header ul li a {
+        padding: 4px 8px;
+    }
+}
+
+/* Ajustes para tablets */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    #header {
+        padding: 15px 30px;
+    }
+    #header .logo {
+        font-size: 1.5em;
+    }
+    #header ul {
+        gap: 20px;
+    }
+}
